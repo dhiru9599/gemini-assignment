@@ -110,3 +110,50 @@ When ready to scale:
 ## Support
 - Render Documentation: [docs.render.com](https://docs.render.com)
 - Community: [community.render.com](https://community.render.com) 
+
+services:
+  - type: web
+    name: google-gemini-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: google-gemini-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: google-gemini-redis
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DB_SSL
+        value: true
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
+
+  - type: redis
+    name: google-gemini-redis
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+
+databases:
+  - name: google-gemini-db
+    databaseName: google_gemini
+    user: google_gemini_user
+    plan: free 
