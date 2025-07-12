@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "b222740f-d00d-4a22-9897-ecc3fc7987db",
+		"name": "gemeini-assignment-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44782100",
+		"_collection_link": "https://dhirajkumar-3120110.postman.co/workspace/Dhiraj-Kumar's-Workspace~5a19945d-8985-40d5-8960-c7cac500989f/collection/44782100-b222740f-d00d-4a22-9897-ecc3fc7987db?action=share&source=collection_link&creator=44782100"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"12345678900\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"12345678900\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/send-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"send-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"12345678900\",\r\n  \"otp\": \"396197\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/verify-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"12345678900\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/forgot-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"forgot-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"otp\": \"698175\",\r\n  \"newPassword\": \"newpassword123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/change-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/user/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"user",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create ChatRoom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"My First Chatroom\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/chatroom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"chatroom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChatRoomList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/chatroom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"chatroom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ChatRoom Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/chatroom/bd0db099-f274-43c4-a6bc-78d7d5892225",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"chatroom",
+						"bd0db099-f274-43c4-a6bc-78d7d5892225"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message: Send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"content\": \"Hello Gemini!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/chatroom/bd0db099-f274-43c4-a6bc-78d7d5892225/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"chatroom",
+						"bd0db099-f274-43c4-a6bc-78d7d5892225",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message: List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/chatroom/bd0db099-f274-43c4-a6bc-78d7d5892225/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"chatroom",
+						"bd0db099-f274-43c4-a6bc-78d7d5892225",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscription: Start Pro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/subscribe/pro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"subscribe",
+						"pro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscription: Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMmZhMmQ5OS0yNGVkLTQ5YjItYmMxYy02OWJkN2NhM2UxM2EiLCJpYXQiOjE3NTIyMzgyOTIsImV4cCI6MTc1Mjg0MzA5Mn0.2SrevjL4R211Ai0piw_wQhkQ7PsR2JT039Scpo5meHY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/subscription/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"subscription",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
