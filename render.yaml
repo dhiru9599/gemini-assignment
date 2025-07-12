@@ -38,6 +38,9 @@ services:
     name: google-gemini-redis
     plan: free
     maxmemoryPolicy: allkeys-lru
+    ipAllowList:
+      - source: service
+        name: google-gemini-api
 
 databases:
   - name: google-gemini-db
