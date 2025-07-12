@@ -34,14 +34,13 @@ services:
       - key: RATE_LIMIT_MAX_REQUESTS
         value: 100
 
+  - type: redis
+    name: google-gemini-redis
+    plan: free
+    maxmemoryPolicy: allkeys-lru
+
 databases:
   - name: google-gemini-db
     databaseName: google_gemini
     user: google_gemini_user
-    plan: free
-
-services:
-  - type: redis
-    name: google-gemini-redis
-    plan: free
-    maxmemoryPolicy: allkeys-lru 
+    plan: free 
