@@ -39,8 +39,7 @@ services:
     plan: free
     maxmemoryPolicy: allkeys-lru
     ipAllowList:
-      - source: service
-        name: google-gemini-api
+      - source: render
 
 databases:
   - name: google-gemini-db
